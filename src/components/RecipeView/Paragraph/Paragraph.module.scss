@@ -1,0 +1,18 @@
+@import "../../../style";
+
+.wrap {
+	margin-bottom: $gutter;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.p {
+	margin: 0 0 6px 0;
+	text-align: justify;
+	text-indent: $gutter;
+	line-height: 22px;
+}

@@ -1,0 +1,21 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+	font-family: 'Titillium Web', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
+	color: #333;
+	//text-shadow: 1px 1px 2px #222;
+}
+
+html, body, #root {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

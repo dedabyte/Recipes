@@ -1,0 +1,42 @@
+@import "../../../style";
+
+$playIconSize: 48px;
+
+.wrap {
+	margin-bottom: $gutter;
+}
+
+.videoContainer {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.videoContainer::after {
+	padding-top: 56.25%;
+	display: block;
+	content: '';
+}
+
+.videoContainer iframe,
+.cover, .coverOverlay, .coverImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.coverOverlay {
+	background: rgba(0, 0, 0, 0.3);
+	background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+}
+
+.playIcon {
+	position: absolute;
+	width: $playIconSize;
+	height: $playIconSize;
+	top: calc(50% - #{$playIconSize} / 2);
+	left: calc(50% - #{$playIconSize} / 2);
+	background: url('./play.svg') center/contain no-repeat;
+}

@@ -1,0 +1,41 @@
+@import "../../style";
+
+$backIconSize: 48px;
+$shadowSpread: 80px;
+
+.wrap {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background-color: white;
+	box-shadow: 0 0 #{$shadowSpread} rgba(0, 0, 0, .5);
+	padding-bottom: calc(#{$backIconSize} + #{$gutter});
+	overflow: auto;
+
+	will-change: transform;
+	transition: transform 500ms ease;
+	transform: translateX(calc(100vw + #{$shadowSpread}));
+
+	&.active {
+		transform: translateX(0);
+	}
+}
+
+.back {
+	position: fixed;
+	bottom: $gutter;
+	right: $gutter;
+	width: $backIconSize;
+	height: $backIconSize;
+	background: url('./back.svg') center/contain no-repeat;
+	border-radius: $backIconSize;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+
+	will-change: transform;
+	transition: transform 500ms ease;
+	transform: translateY(calc(#{$backIconSize} + #{$gutter}));
+
+	&.active {
+		transform: translateY(0);
+	}
+}
