@@ -3,14 +3,19 @@ export const initDeviceReady = () => {
 };
 
 const onDeviceReady = () => {
+	// console.log('onDeviceReady');
 	document.addEventListener('backbutton', onBackKey, false);
 };
 
 const onBackKey = (e: any) => {
+	// console.log('onBackKey');
 	if (backKeyHandler !== noop) {
+		// console.log('onBackKey IF');
 		e.preventDefault();
 		backKeyHandler();
 		backKeyHandler = noop;
+	} else {
+		return true;
 	}
 };
 
