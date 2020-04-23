@@ -15,7 +15,8 @@ const onBackKey = (e: any) => {
 		backKeyHandler();
 		backKeyHandler = noop;
 	} else {
-		return true;
+		// @ts-ignore
+		navigator.app.exitApp();
 	}
 };
 
