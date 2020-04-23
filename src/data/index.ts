@@ -206,4 +206,30 @@ export const recipes: Recipe[] = prepareData([
 			}
 		]
 	},
+	{
+		id: '6',
+		title: 'Domaći rolat sa džemom',
+		titleAlt: 'domaci rolat sa dzemom',
+		tags: ['slatko', 'rolat', 'džem'],
+		imageUrl: 'https://imgur.com/wEXZs6h',
+		content: [
+			{
+				type: RecipeContentType.INGREDIENTS,
+				content: `
+				6 : jaja
+				7 kašika : šećera
+				7 kašika : brašna
+				1 kašika : ulja
+				1 kesica : praška za pecivo
+				5-6 kašika : džema
+				`,
+			},
+			{
+				type: RecipeContentType.PARAGRAPH,
+				content: `
+				Mutiti žumanca sa šećerom pa dodati čvrsto izmućen sneg od belanaca, i ostale sastojke, onda mešati lagano varjačom da belanci ne padnu. U veliki pleh od šporeta staviti papir za pečenje i izliti biskvitno testo. Peći u zagrejanoj rerni na 175 stepeni oko 20 minuta, treba paziti jer ne sme da se prepeče jer neće dobro da se savije. Pečenom i prohlađenom biskvitu skinuti papir. Premestiti ga na kuhinjsku krpu posutu kristal šećerom i uviti i ostaviti da se potpuno ohladi. Ohlađeno odviti, namazati džemom i ponovo saviti u rolat.
+				`,
+			},
+		]
+	},
 ]);

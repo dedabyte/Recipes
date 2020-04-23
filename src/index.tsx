@@ -6,10 +6,14 @@ import { App } from './components/App';
 import './index.scss';
 import { rootReducer } from './reducers';
 import * as serviceWorker from './serviceWorker';
+import { initDeviceReady } from './utils/cordova';
+
+initDeviceReady();
 
 const store = configureStore({
 	reducer: rootReducer,
 });
+
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
