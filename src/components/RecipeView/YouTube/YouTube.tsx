@@ -1,4 +1,6 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Store } from '../../../types';
 import { Image } from '../../Image';
 import { RecipeContentProps } from '../types';
 import c from './YouTube.module.scss';
@@ -16,8 +18,19 @@ const getEmbedUrl = (id: string) => `https://www.youtube.com/embed/${id}?autopla
 
 const getCoverUrl = (id: string) => `https://i1.ytimg.com/vi/${id}/0.jpg`;
 
+const selectIsActive = (s: Store) => s.slideIn.isActive;
+
 export const YouTube: FC<RecipeContentProps> = ({ recipeContent }) => {
+	const isActive = useSelector<Store, boolean>(selectIsActive);
+
 	const [play, setPlay] = useState(false);
+
+	// to stop video when slideIn is closed
+	useEffect(() => {
+		if (!isActive) {
+			setPlay(false);
+		}
+	}, [isActive]);
 
 	const { content } = recipeContent;
 

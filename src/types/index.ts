@@ -1,6 +1,7 @@
 export interface Store {
 	search: SearchState,
 	slideIn: SlideInState;
+	data: DataState,
 }
 
 export interface SearchState {
@@ -13,6 +14,12 @@ export interface SearchState {
 
 export interface SlideInState {
 	isActive: boolean;
+}
+
+export interface DataState {
+	isLoading: boolean;
+	isError: boolean;
+	data: Recipe[];
 }
 
 export enum RecipeContentType {

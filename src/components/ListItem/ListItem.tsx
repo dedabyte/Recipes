@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { recipes } from '../../data';
 import { activate } from '../../reducers/slideIn';
 import { Recipe } from '../../types';
 import { getThumbnail } from '../../utils/imgur';
@@ -10,26 +9,19 @@ import { TagList } from '../TagList';
 import c from './ListItem.module.scss';
 
 interface Props {
-	id: string;
-	title: string;
-	imageUrl: string;
-	tags?: string[];
+	recipe: Recipe;
 }
 
-export const ListItem: FC<Props> = (
-	{
-		id,
+export const ListItem: FC<Props> = ({ recipe }) => {
+	const {
 		title,
 		imageUrl,
 		tags = [],
-	}
-) => {
+	} = recipe;
+
 	const dispatch = useDispatch();
 
-	const handleClick = () => {
-		const recipe = recipes.find(r => r.id === id) as Recipe;
-		dispatch(activate(<RecipeView recipe={recipe}/>));
-	};
+	const handleClick = () => dispatch(activate(<RecipeView recipe={recipe}/>));
 
 	return (
 		<div className={c.wrap} onClick={handleClick}>
