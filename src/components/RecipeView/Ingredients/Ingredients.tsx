@@ -40,7 +40,7 @@ export const Ingredients: FC<RecipeContentProps> = ({ recipeContent }) => {
 				<tbody>
 				{
 					parsedContent.map((row, i) => (
-						<tr key={`${recipeContent.key}-ingredient-${i}`}>
+						<tr key={`${recipeContent.id}-ingredient-${i}`}>
 							<td className={c.quantity}>{row.quantity}</td>
 							<td className={c.value}>{row.value}</td>
 						</tr>

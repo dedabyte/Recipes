@@ -9,8 +9,12 @@ export const SlideIn: FC = () => {
 
 	const wrapRef = useRef(null);
 
-	const handleBack = () => deactivate();
+	const handleBack = () => {
+		deactivate();
+		setBackKeyHandler();
+	};
 
+	// on component change, scroll up and attach back-key handler
 	useEffect(
 		() => {
 			if (wrapRef && wrapRef.current) {

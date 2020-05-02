@@ -24,6 +24,6 @@ const noop = () => {};
 
 let backKeyHandler: () => void = noop;
 
-export const setBackKeyHandler = (handler: () => void) => {
+export const setBackKeyHandler = (handler: () => void = noop) => {
 	backKeyHandler = handler;
 };

@@ -28,7 +28,7 @@ export const Paragraph: FC<RecipeContentProps> = ({ recipeContent }) => {
 		<div className={c.wrap}>
 			<div className={c.title}>{title}</div>
 			{
-				parsedContent.map((p, i) => <p key={`${recipeContent.key}-paragraph-${i}`} className={c.p}>{p}</p>)
+				parsedContent.map((p, i) => <p key={`${recipeContent.id}-paragraph-${i}`} className={c.p}>{p}</p>)
 			}
 		</div>
 

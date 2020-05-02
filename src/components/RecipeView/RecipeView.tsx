@@ -15,11 +15,11 @@ interface Props {
 const renderRecipeContent = (recipeContent: RecipeContent) => {
 	switch (recipeContent.type) {
 		case RecipeContentType.INGREDIENTS:
-			return <Ingredients recipeContent={recipeContent} key={recipeContent.key}/>;
+			return <Ingredients recipeContent={recipeContent} key={recipeContent.id}/>;
 		case RecipeContentType.YOUTUBE:
-			return <YouTube recipeContent={recipeContent} key={recipeContent.key}/>;
+			return <YouTube recipeContent={recipeContent} key={recipeContent.id}/>;
 		case RecipeContentType.PARAGRAPH:
-			return <Paragraph recipeContent={recipeContent} key={recipeContent.key}/>;
+			return <Paragraph recipeContent={recipeContent} key={recipeContent.id}/>;
 		default:
 			return null;
 	}

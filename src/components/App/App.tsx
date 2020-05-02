@@ -1,9 +1,8 @@
 import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { prepareData } from '../../data';
 import { fbget } from '../../data/axios';
 import { dataSuccess } from '../../reducers/data';
-import { Recipe, Store } from '../../types';
+import { Recipe, ResponseAllRecipes, Store } from '../../types';
 import { ListItem } from '../ListItem';
 import { SlideIn } from '../SlideIn';
 import c from './App.module.scss';
@@ -19,9 +18,9 @@ export const App: FC = () => {
 	useEffect(
 		() => {
 			fbget('recipes')
-				.then(({ data }: { data: Recipe[] }) => {
+				.then(({ data }: ResponseAllRecipes) => {
 					console.log(data);
-					dispatch(dataSuccess({ data: prepareData(data) }));
+					dispatch(dataSuccess({ data: Object.values(data) }));
 				})
 				.catch((error) => console.log(error));
 		},
@@ -33,7 +32,7 @@ export const App: FC = () => {
 			<header>
 			</header>
 			<section>
-				{data.map((r, i) => <ListItem key={`list-${i}-${r.id}`} recipe={r}/>)}
+				{data.map((r, i) => <ListItem key={`list-${r.id}`} recipe={r}/>)}
 			</section>
 			<SlideIn/>
 		</div>

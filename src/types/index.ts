@@ -31,7 +31,7 @@ export enum RecipeContentType {
 
 export interface RecipeContent {
 	type: RecipeContentType;
-	key?: string;
+	id: string;
 	title?: string;
 	content?: string;
 }
@@ -45,4 +45,10 @@ export interface Recipe {
 	time?: number;
 	tags: string[];
 	content: RecipeContent[];
+}
+
+export interface ResponseAllRecipes {
+	data: {
+		[key: string]: Recipe;
+	}
 }
