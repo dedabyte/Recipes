@@ -21,12 +21,12 @@ const parseContent = (content?: string) => {
 };
 
 export const Paragraph: FC<RecipeContentProps> = ({ recipeContent }) => {
-	const { title = 'Priprema', content } = recipeContent;
+	const { title, content } = recipeContent;
 	const parsedContent = parseContent(content);
 
 	return (
 		<div className={c.wrap}>
-			<div className={c.title}>{title}</div>
+			<div className={c.title}>{title || 'Priprema'}</div>
 			{
 				parsedContent.map((p, i) => <p key={`${recipeContent.id}-paragraph-${i}`} className={c.p}>{p}</p>)
 			}

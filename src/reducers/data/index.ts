@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import sortBy from 'lodash/sortBy';
 import { ls, LsKeys } from '../../data/ls';
 import { DataState, Recipe } from '../../types';
 
@@ -17,10 +18,11 @@ const dataSlice = createSlice({
 			state.isError = false;
 		},
 		dataSuccess(state: DataState, action: PayloadAction<{ data: Recipe[] }>) {
+			const sortedData = sortBy(action.payload.data, ['title']);
 			state.isLoading = false;
 			state.isError = false;
-			state.data = action.payload.data;
-			ls.set(LsKeys.DATA, action.payload.data);
+			state.data = sortedData;
+			ls.set(LsKeys.DATA, sortedData);
 		},
 		dataError(state: DataState) {
 			state.isLoading = false;

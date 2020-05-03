@@ -30,12 +30,12 @@ const parseContent = (content?: string) => {
 };
 
 export const Ingredients: FC<RecipeContentProps> = ({ recipeContent }) => {
-	const { title = 'Sastojci', content } = recipeContent;
+	const { title, content } = recipeContent;
 	const parsedContent = parseContent(content);
 
 	return (
 		<div className={c.wrap}>
-			<div className={c.title}>{title}</div>
+			<div className={c.title}>{title || 'Sastojci'}</div>
 			<table className={c.table}>
 				<tbody>
 				{
